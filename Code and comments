@@ -1,13 +1,5 @@
 # Apple Store Monetization Experiment Design
 
-# Goal: increase the entire store’s revenue by 5%.
-# 1) Exploratory analysis: generating product improvement ideas from chaotic data
-# 2) Experiment design: design framework for doing A/B test with statistical rigor
-# 3) Implementation: build Python dashboard to show the output of the A/B test.
-# 4) Recommendation: Make recommendations and advise next steps
-
-import warnings
-warnings.filterwarnings('ignore')
 import numpy as np
 import pandas as pd
 pd.set_option('display.max_columns', None)
@@ -81,11 +73,7 @@ dtype: int64
 len(my_data[my_data['visit_before']==0])
 71059
 
-# spend_usd_next_14_days: No 0 value. So NAs can be filled by 0.
-# user_added_credit_card, user_added_dcb, user_added_gift_card, user_added_paypal: They are NAs only when users don't have any fops.
-# Other features: The corresponding samples can be removed.
-
-# remove na in column user_added_credit_card and clicked_buy_before, country
+# remove NAs in made_purchase_before, clicked_buy_before, country, and saw_cart_before
 df = my_data.dropna(subset=['made_purchase_before', 'clicked_buy_before','country','saw_cart_before'])
 
 # fill na with 0

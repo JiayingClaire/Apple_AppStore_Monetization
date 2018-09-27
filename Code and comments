@@ -131,8 +131,9 @@ print '# users who spend larger than 100 USD: ', len(spend_usd_next_14_days[spen
 print '# users who spend larger than 500 USD: ', len(spend_usd_next_14_days[spend_usd_next_14_days>=500])/n
 # users who spend larger than 100 USD:  0.027572637538
 # users who spend larger than 500 USD:  0.00374930061917
+
 # The plots are highly skewed because of outliers. There are a few transactions that have extremely high spend. 
-# We calculate that among all user, percentage of users who spend larger that 200 USD is 2.7%, which is pretty much low. 
+# We calculate that among all user, percentage of users who spend larger that 200USD is 2.7%, which is pretty low. 
 # Thus we can roughly set 200 and see the distribution plot again. We can see the plot makes much more sense. 
 # Most of the spends are between 0~40, which is the reasonable price for an app.
 
@@ -145,7 +146,6 @@ plt.show()
 # Verify if users have already made purchase before May 1 will have a higher spend rate
 # population percentage
 popu_spend_rate = np.mean(spend_usd_next_14_days!=0)
-
 # if people had purchased stuff before May 1
 purchased = df[df['made_purchase_before']==1]
 purchased_spend_rate = len(purchased[purchased['spend_usd_next_14_days']!=0]) / (len(purchased)+0.0)
@@ -154,8 +154,10 @@ print 'The population spend rate is: ', popu_spend_rate
 print 'If purchased before, the spend rate is: ', purchased_spend_rate
 The population spend rate is:  0.17169154156954478
 If purchased before, the spend rate is:  0.730990766453
+# It's clear that users who purchased before will have a much larger chance to purchase in the next 14 days.
 
-# Actual Purchase Funnel: basically, the user will go through several steps until finishing purchase.
+# Purchase Funnel
+# Basically, the user will go through several steps until finishing purchase.
 # First, he enters the app store and sees the webpage. This stage we call it "Visited". 
 # Users can see lots of apps and choose one of them if he like. Then he goes to the next stage, "Saw cart". 
 # Now there are some products he really loves and he adds the products into the cart.

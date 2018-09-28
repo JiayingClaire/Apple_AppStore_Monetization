@@ -315,12 +315,11 @@ FOP conversion rate:
 # Two potential strategies:
 # 1) Ask more from good: Credit card discount raises from 3% to 3.5%
 # 2) Fix things: Find those who only use paypal. See where they usually go. Then make ads for credit card.
-
 # Assume that we choose to "Fix things". Next step is to perform A/B test. 
-# Users, who only use Paypal as the FOP, are most likely to view 'GAMES', 'MOVIES' and 'MUSIC'. 
-# Totally, 49166 users are involved, with 24695 users in case group and 24471 users in control group.
 
 # A/B test
+# Users, who only use Paypal as the FOP, are most likely to view 'GAMES', 'MOVIES' and 'MUSIC'. 
+# Totally, 49166 users are involved, with 24695 users in case group and 24471 users in control group.
 
 experiment = pd.read_csv("Python_project_experiment.csv")
 experiment.head()
@@ -368,13 +367,14 @@ min          0.000000
 max        199.990000
 Name: spend_usd, dtype: float64
 
-# perform two sample one side t-test on case/control group
+# perform two sample one-tail t-test on case/control group
 from scipy import stats
 stats.ttest_ind(control, case, equal_var=True)
 Ttest_indResult(statistic=-2.880888081055276, pvalue=0.0039672827581814325)
 
 # The p-value is < 0.01 - reject the null hypothesis and conclude that case and control group have different mean. 
 # Statistically, our action policy will bring the increase of the revenue for the app store. 
+
 # Recommendation: focus more on those who only use paypal as FOP, show them the benefit of the credit card 
 # and offer them possible discount.
 

@@ -1,5 +1,4 @@
-Goal
-Increase the Apple App store’s revenue by 5% in Q3. 
+Goal: Increase the Apple App store’s revenue by 5% in Q3. 
 
 Project Tasks
 1. Exploratory analysis

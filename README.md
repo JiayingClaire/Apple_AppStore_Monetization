@@ -1,10 +1,10 @@
 **Goal**: Increase the revenue of the App Store based on the existing app purchasing process.
 
 Specifically, the project covered the following 4 areas:
-**Exploratory analysis**: generating product improvement ideas from chaotic data
-**Experiment design**: design framework for doing A/B test with statistical rigor
-**Implementation**: build Python dashboard to show the output of the A/B test.
-**Recommendation**: Make recommendations and advise next steps
+- **Exploratory analysis**: generating product improvement ideas from chaotic data
+- **Experiment design**: design framework for doing A/B test with statistical rigor
+- **Implementation**: build Python dashboard to show the output of the A/B test.
+- **Recommendation**: Make recommendations and advise next steps
 
 Project Tasks Breakdown
 
